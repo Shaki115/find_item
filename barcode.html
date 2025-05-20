@@ -1,0 +1,89 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="main_content">
+    <section id="brands_click" class="sections" onclick="showBrandSect()">
+        <h2>{{_('BRAND')}}</h2>
+        <p id="selected_brand" class="selected"></p>
+    </section>
+    <section id="types_click" class="sections" onclick="showTypeSect()">
+        <h2>{{_('TYPE')}}</h2>
+        <p id="selected_type" class="selected"></p>
+    </section>
+    <section id="sizes_click" class="sections" onclick="showSizeSect()">
+        <h2>{{_('SIZE')}}</h2>
+        <p id="selected_size" class="selected"></p>
+    </section>
+    <section id="models_click" class="sections" onclick="showModelSect()">
+        <h2>{{_('MODEL')}}</h2>
+        <p id="selected_model" class="selected"></p>
+    </section>
+
+    <div id="barcode_sect" class="barcode_sect">
+        <div class="item_info">
+            <img src="" alt="Item Thumbnail" id="item_thumbnail" class="item_thumbnail">
+            <p id="item_id" class="item_id"></p>
+        </div>
+
+        <div id="item_barcode" class="item_barcode"></div>
+        
+    </div>
+</div>
+
+<div id="opacityForWindows" onclick="closeOpacityWindows()" style="display: none;"></div>
+<section id="brand_sect" class="brand_sect">
+    <h2>1.{{_('BRAND')}}</h2>
+    <div class="content">
+        <button class="close-button" onclick="closeOpacityWindows()">×</button>
+
+        <input id="search_brand" class="search" type="search" onkeyup="searchBrand()" placeholder="Search the brand...">
+        <div id="brand_list" class="list">
+
+            <div id="noResultsMessageBrand" class="noResultsMessage">No brand found</div>
+        </div>
+    </div>
+</section>
+
+<section id="type_sect" class="type_sect">
+    <h2>2.{{_('TYPE')}}</h2>
+    <div class="content">
+        <button class="close-button" onclick="closeOpacityWindows()">×</button>
+
+        <input id="search_type" class="search" type="search" onkeyup="searchType()" placeholder="Search the type...">
+        <div id="type_list" class="list">
+
+            <div id="noResultsMessageType" class="noResultsMessage">No type found</div>
+        </div>
+    </div>
+</section>
+
+<section id="size_sect" class="size_sect">
+    <h2>3.{{_('SIZE')}}</h2>
+    <div class="content">
+        <button class="close-button" onclick="closeOpacityWindows()">×</button>
+
+        <input id="search_size" class="search" type="search" onkeyup="searchSize()" placeholder="Search the size...">
+        <div id="size_list" class="list">
+
+            <div id="noResultsMessageSize" class="noResultsMessage">No size found</div>
+        </div>
+    </div>
+</section>
+
+<section id="model_sect" class="model_sect">
+    <h2>4.{{_('MODEL')}}</h2>
+    <div class="content">
+        <button class="close-button" onclick="closeOpacityWindows()">×</button>
+
+        <input id="search_model" class="search" type="search" onkeyup="searchModel()" placeholder="Search the model...">
+        <div id="model_list" class="list">
+
+            <div id="noResultsMessageModel" class="noResultsMessage">No size found</div>
+        </div>
+    </div>
+</section>
+
+<button id="clear_btn" onclick="clearAll()">
+    Clear
+</button>
+{% endblock %}
